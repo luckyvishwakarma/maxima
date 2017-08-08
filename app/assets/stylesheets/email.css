@@ -27,7 +27,7 @@
     width: 75%;
   }
   .mail-box .sm-side .user-head {
-    background: none repeat scroll 0 0 #4c0217;
+    background: none repeat scroll 0 0 rgb(80, 34, 30);
     border-radius: 4px 0 0;
     color: #fff;
     min-height: 35px;
@@ -145,7 +145,7 @@
   }
   .inbox-head {   
     /*  background: none repeat scroll 0 0 #00a8b3;   */
-      background: none repeat scroll 0 0 rgba(56, 5, 3, 0.87);
+      /*background: none repeat scroll 0 0 rgba(56, 5, 3, 0.87);*/
       border-radius: 0 4px 0 0;
       color: #fff;
       min-height: 30px;
@@ -156,7 +156,7 @@
       font-weight: 300;
       margin: 0;
       padding-top: 6px;
-      color: white;
+      color: #50221e;
   }
   .inbox-head .sr-input {
       border: medium none;
