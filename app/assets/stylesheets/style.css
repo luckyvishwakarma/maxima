@@ -313,6 +313,7 @@ input[type=text], input[type=submit], textarea {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	color: #333;
 }
 input, button, select, textarea {
 	font-family:'Open Sans', Arial, sans-serif;
@@ -1891,7 +1892,7 @@ i.icon-white {
 
 /*profile tab*/
 .tabbable{margin-top: 17px;margin-left: 23px;}
-.nav-tabs > li > a {background-color: #09828c;border-radius: 15px 2px 0 0;color: #fff;}
+.nav-tabs > li > a {background-color: #09828c;border-radius: 10px 2px 0 0;color: #fff;}
 .tabbable ul.nav-tabs li.active a {background-color: #09828c;border-radius: 26px 2px 0 0;color: #fff;}
 .nav-tabs > li > a:hover {
   background-color: #545454;
@@ -1901,3 +1902,44 @@ i.icon-white {
 
 /*dashboard layout*/
 .main-container{max-height:100%;min-height: 500px; background-color: antiquewhite;}
+
+ /*faq*/
+ .faq{	
+	background-image: url(/assets/faq.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+.font-color{
+  color: white;
+}
+.wdth{
+  width: 100%;
+}
+.rz-none{
+  resize: none;
+}
+textarea {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;    
+}
+select {
+  -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+/*gallary*/
+	.gal {	
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3; 
+	}	
+	.gal img{ width: 100%; padding: 7px 0;}
+	@media (max-width: 500px) {		
+		.gal {	
+		-webkit-column-count: 1; /* Chrome, Safari, Opera */
+		  -moz-column-count: 1; /* Firefox */
+		  column-count: 1;
+	}
+	}

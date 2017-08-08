@@ -1,73 +1,40 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <div class="container-fluid faq">
-  <div class="row">
-  	<div class="col-md-6"></div>
-  	<div class="col-md-6 faq-form">
-  	<form role="form" id="contact-form" class="contact-form">
-                    
-                		<div class="col-md-6">
-                  		<div class="form-group">
-                            <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Name">
-                  		</div>
-                  	</div>
-                    	<div class="col-md-6">
-                  		<div class="form-group">
-                            <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
-                  		</div>
-                  	</div>
-                  	
-                  	<div class="row">
-                  		<div class="col-md-12">
-                  		<div class="form-group">
-                            <textarea class="form-control" rows="3" name="Message" id="Message" placeholder="Message"></textarea>
-                  		</div>
-                  	</div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-12">
-                  <button type="submit" class="btn main-btn pull-right">Send a message</button>
-                  </div>
-                  </div>
-                  
-                </form>
-				<!-- <form role="form" class="col-md-9" style="margin-left: 19%;">
-				<h2 class="hd-col">Ask Your Question</h2>           
-				<div class="form-group go-right">
-				<input id="name" name="name" type="text" class="form-control" required>
-				<label for="name">To</label>
-				</div>
-				<div class="form-group go-right">
-				<input id="name" name="name" type="text" class="form-control" required>
-				<label for="name">Your Name</label>
-				</div>
-			<div class="form-group">
-				<textarea id="name" name="text" class="form-control" placeholder="Your Question ?"required></textarea>	
-				<input class="btn btn-primary btn-block" value="Ask ?" type="button">		
-			</div>
-			</form> -->
-		</div>       
-	</div>
+  <form class="form-vertical" style="float: right;margin-top: 20px;width: 41%;">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend class="font-color">Ask Your Question</legend>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="where">To</label>
+      <div class="col-md-4">      
+         <select id="category" name="category" class="form-control wdth">
+          <option value="1">Email 1</option>
+          <option value="2">Email 2</option>
+          <option value="1">Email 3</option>
+          <option value="2">Email 4</option>
+        </select>
+      </div>
+    </div></br>
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="category">Category</label>
+      <div class="col-md-4">
+        <select id="category" name="category" class="form-control wdth">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div></fieldset></br>
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="your_question">Your Question</label>
+      <div class="col-md-4">                     
+        <textarea class="form-control rz-none" id="your_question" name="your_question" rows="4" cols="50">Ask Your Question here...</textarea>
+      </div>
+    </div>
+
+  </fieldset>
+  </form>
 </div>
-<style type="text/css">
-	.contact-form{ margin-top:15px;}
-.contact-form .textarea{ min-height:220px; resize:none;}
-.form-control{ box-shadow:none; border-color:#eee; height:49px;}
-.form-control:focus{ box-shadow:none; border-color:#00b09c;}
-.form-control-feedback{ line-height:50px;}
-.main-btn{ background:#00b09c; border-color:#00b09c; color:#fff;}
-.main-btn:hover{ background:#00a491;color:#fff;}
-.form-control-feedback {
-line-height: 50px;
-top: 0px;
-}
-.faq{	
-	background-image: url(/assets/faq.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 600px;
-}
-.faq-form{
-	background: linear-gradient(to right, #827878 , #104c1a);
-	margin-top: 42px;
-}
-</style>

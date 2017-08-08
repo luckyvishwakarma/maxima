@@ -1072,8 +1072,8 @@ label {
   display: block;
   margin-bottom: 5px;
 }
-/*
-select,
+
+/*select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -1101,8 +1101,8 @@ input[type="color"],
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
-}*/
-
+}
+*/
 input,
 textarea,
 .uneditable-input {
