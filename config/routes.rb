@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   		get 'gallary'
   	end  	
   end
-  resources :users
+  resources :users do
+    member do
+      post 'upload_image'
+    end
+  end
   resources :emails, only: [:show]
   resources :faqs, only: [:show]
+  resources :gallary
 end

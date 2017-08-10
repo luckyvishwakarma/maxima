@@ -12,18 +12,24 @@
         <div class="container">
           <h1 class="page-header prof-mar">Edit Profile</h1>
           <div class="row">
-            <!-- left column -->
-            <div class="col-md-4" style="float: left;padding-left: 32px;">
+            <!-- left column -->            
+            <div class="col-md-4" style="float: left;">
               <div class="text-center">
-                <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-                <h6>Upload a different photo...</h6>
-                <input type="file" class="filestyle">
+              <%= form_for @user, url: user_path, html: { class: "form-horizontal form-wd"} do |f| %>
+              <% if @user.profile_image.present? %>
+                <%= image_tag(@user.profile_image.url, :size => "250x160",:class => "avatar img-circle img-thumbnail")  %>
+              <%else%>
+                <%= image_tag("default.png",:size => "250x160",:class => "avatar img-circle img-thumbnail" )%>
+              <% end %>
+                <!-- <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">  -->             
+                <h6>Upload a different photo...</h6>                             
+                  <%= f.file_field :profile_image  %>             
               </div>
             </div>
             <!-- edit form column -->
-            <div class="col-md-8" style="float: right;padding-right: 197px;">      
+            <div class="col-md-8 pro_form">      
               <h3>Personal info</h3>
-              <%= form_for @user, url: user_path, html: { class: "form-horizontal form-wd"} do |f| %>             
+                           
                 <div class="form-group">
                   <label class="col-lg-3">Emp Id: <%= @user.emp_id %></label>
                 </div>
@@ -74,16 +80,16 @@
                   <div class="col-lg-8">
                     <%= f.text_field :contact, placeholder: @user.contact ,class: "wd" %>
                   </div>
-                </div>
-                <br>
+                </div>                
                 <div class="form-group">
                   <label class="col-lg-3">Gender:</label>
                   <div class="col-lg-8">
                     <div class="ui-select">
-                      <select id="user_time_zone" class="select-wd">
+                     <!--  <select id="user_time_zone" class="select-wd">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-                      </select>
+                      </select> -->
+                      <%= f.select :gender, User::GENDER.collect { |s, i| [s, i] }, {:prompt=>true}, class: 'select-wd',placeholder: @user.gender %>
                     </div>
                   </div>
                 </div>
@@ -97,13 +103,14 @@
                 <div class="form-group">
                   <label class="col-lg-3">Password:</label>
                   <div class="col-lg-8">
-                    <%= f.text_field :password, placeholder: @user.password  %>
+                    <%= f.password_field :password, placeholder: @user.password  ,class: "wd" %>
                   </div>
-                </div>               
+                </div> 
+                <br>              
                 <div class="form-group">
                   <label class="col-lg-3">Confirm password:</label>
                   <div class="col-lg-8">
-                    <%= f.text_field :password_confirmation, placeholder: @user.password_confirmation %>
+                    <%= f.password_field :password_confirmation, placeholder: @user.password_confirmation ,class: "wd" %>
                   </div>
                 </div>
                 <div class="form-group" style="margin-top: 10px;">
@@ -112,7 +119,7 @@
                    <span></span>                    
                   </div>
                 </div>                
-              <!-- </form> -->
+              <!-- </form> --> 
               <% end %>
             </div>
           </div>
@@ -125,8 +132,3 @@
     </div>
   </div>
 </div>
-<style type="text/css">
-  .wd{
-    width: 93%;
-  }
-</style>>
