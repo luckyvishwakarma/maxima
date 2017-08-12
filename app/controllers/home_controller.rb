@@ -3,6 +3,5 @@ class HomeController < ApplicationController
 	end
 	def contact
 	end
-	def gallary
-	end
+	
 end

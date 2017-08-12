@@ -1,0 +1,104 @@
+<div class="container-fluid">  
+  <div class="row">
+      <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active" data-value="picnic"><a href="#tab11" data-toggle="tab">Picnic</a></li>
+        <li data-value="innogration"><a href="#tab12" data-toggle="tab">Innogration</a></li>
+        <li data-value="birthday"><a href="#tab13" data-toggle="tab">Birthday</a></li>        
+      </ul>
+
+      <div class="tab-content prof-colr">      
+        <div class="tab-pane active" id="tab11">
+          <div class="gal">          
+          <% @gallary_picnic.each do |gallary| %>          
+            <% gallary.pictures.each do |picture | %>              
+              <label class="image-checkbox">
+                <%= image_tag(picture.attachments.url, class: "img-check", id: picture.id) %>
+                <input type="checkbox" name="image[]" value="<%= picture.id %>" />
+                <i class="fa fa-check hidden"></i>                        
+              </label><br>                           
+            <% end %>                           
+          <% end %><br>
+          </div>
+        </div><br>
+        <div class="tab-pane" id="tab12">
+          <div class="gal">
+            <% @gallary_innogration.each do |gallary| %>      
+              <% gallary.pictures.each do |picture| %>
+                <label class="image-checkbox">
+                <%= image_tag(picture.attachments.url)  %>
+                <input type="checkbox" name="image[]" value="<%= picture.id %>" />
+                <i class="fa fa-check hidden"></i>                        
+              </label>  <br>  
+              <% end %>                 
+            <% end %>     
+          </div><br>           
+        </div><br>
+        <div class="tab-pane" id="tab13">
+          <div class="gal">
+            <% @gallary_birthday.each do |gallary| %>      
+              <% gallary.pictures.each do |picture| %>
+                <label class="image-checkbox">
+                <%= image_tag(picture.attachments.url)  %>
+                <input type="checkbox" name="image[]" value="<%= picture.id %>" />
+                <i class="fa fa-check hidden"></i>                        
+              </label>  <br>  
+              <% end %>                 
+            <% end %>     
+          </div><br>          
+        </div>
+      </div> 
+
+      <%= form_for (@gallary), url: gallaries_path , :html => {:multipart => true}, method: :post do |f| %>
+        <%= f.hidden_field :kind_of_pic  %>   
+        <div align="center">
+          <%= f.fields_for :pictures, Picture.new  do |pic| %>
+            <%= pic.file_field :attachments ,:multiple => true, name: "pictures[attachments][]" %>
+          <% end %>           
+        <%= f.submit 'upload' ,:class=> "btn btn-primary upload"%>
+      <% end %> 
+        <button id="delete_selected" class="btn btn-primary delete">Delete</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+// for kind of pic value
+  $('.tabbable').on('click', 'li', function(){   
+      var kind_of_pic = $(this).data('value');        
+      $('#gallary_kind_of_pic').val(kind_of_pic);
+  });
+
+// for checked and uncheckd
+
+  $(".image-checkbox").each(function () {
+    if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+      $(this).addClass('image-checkbox-checked');    
+    }
+    else {
+      $(this).removeClass('image-checkbox-checked');
+    }
+  });
+
+// for callection of id array to be delete
+  var pic_ids = [];
+  $(".image-checkbox").on("click", function (e) {
+    $(this).toggleClass('image-checkbox-checked');
+    var checkbox = $(this).find('input[type="checkbox"]'); 
+    id = checkbox.prop("checked",!checkbox.prop("checked"))
+    pic_ids.push(id.val());
+
+//ajax call for delete
+    $("#delete_selected").click(function (){      
+      $.ajax({      
+      url: "picture/remove_pics",
+      method: "get",
+      data: { "pic_ids": pic_ids }
+       })
+    }); 
+  e.preventDefault();  
+  });
+</script>
+
+

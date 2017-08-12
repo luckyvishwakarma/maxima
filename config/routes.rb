@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   	collection do
   		get 'dashboard'
   		get 'contact'
-  		get 'gallary'
   	end  	
   end
   resources :users do
@@ -15,5 +14,11 @@ Rails.application.routes.draw do
   end
   resources :emails, only: [:show]
   resources :faqs, only: [:show]
-  resources :gallary
+  resources :picture do
+    collection do
+      get 'remove_pics'
+    end
+  end
+
+  resources :gallaries 
 end
