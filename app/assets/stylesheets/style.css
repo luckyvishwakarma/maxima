@@ -2038,12 +2038,6 @@ tr.row-content
 {
     color:#6c7173;
 }
-
-table
-{
-    /*border-bottom: 8px solid #448aff;*/
-}
-
 td.check
 {
     text-align: center;
@@ -2093,4 +2087,5 @@ button.btn.answer{
 button.btn.answer.update{
 	background-color: #fd7444
 }
+.tx{background: rgba(227, 231, 228, 1);font-family: 'Open Sans', sans serif;	}
 /* Table css End */
