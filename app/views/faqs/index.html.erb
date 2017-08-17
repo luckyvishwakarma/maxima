@@ -1,0 +1,41 @@
+<div class="container-fluid faq">
+
+<!--   <form class="form-vertical faq_form"> -->
+<%= form_for @faq, url:faqs_path, method: :post, :html => {:class=> "form-vertical faq_form"} do |f|%>
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend class="font-color">Ask Your Question</legend>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="where">To</label>
+      <div class="col-md-4">
+    
+        <%= f.select :question_to_id, find_admin_hr_email.collect {|u| [u.email, u.id]}, {:prompt=>true}, class: 'form-control wdth',placeholder: "Select Category"%>
+      </div>
+    </div></br>
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="category">Category</label>
+      <div class="col-md-4">      
+         <%= f.select :category, Faq::CATEGORY.collect { |s, i| [i, s] }, {:prompt=>true}, class: 'form-control wdth',placeholder: "Select Category"%>
+      </div>
+    </div></fieldset></br>
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label font-color" for="your_question">Your Question</label>
+      <div class="col-md-4">
+     <%= f.text_area :question, :placeholder=>"Ask Your Question here", class: "form-control rz-none", size: "50x4"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4">                     
+        <button class="btn ask"> Ask? </button>
+        <%= link_to 'View Answer', faq_path(current_user), class: "btn btn-primary ans"%>
+      </div>      
+    </div>
+<% end %>
+ <!--  </form> -->
+</div>

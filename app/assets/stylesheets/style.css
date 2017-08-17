@@ -313,7 +313,7 @@ input[type=text], input[type=submit], textarea {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	color: #fff;
+	/*color: #fff;*/
 }
 input, button, select, textarea {
 	font-family:'Open Sans', Arial, sans-serif;
@@ -548,7 +548,7 @@ header .logo {
 
 /* --- Header slider --- */
 #header-wrapper.header-slider {
-	background: #444 url(../assets/bg-1.jpg) no-repeat center center fixed;
+	background: #444 url(../assets/background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -1996,3 +1996,101 @@ button.btn {
 	background-color: #c70300;
 }
 .btn-primary.upload{ background-color: #1d5a1d;}
+
+/*contactus*/
+.tx{background: rgba(227, 231, 228, 1);font-family: 'Open Sans', sans serif;}
+.google{color: white;}
+
+
+/*faq*/
+button.btn.ask{background-color: #fd7444;}
+  .faq_form{float: right;margin-top: 20px;width: 41%;}
+.ans{background-color: #8e7c79;height: 27px;margin-bottom: 7px;
+}
+/* Table css Start */
+.tb{  margin: 20px;}
+a.del
+{
+    background:#d9534f;
+    border-radius: 2px; 
+    width: 35px;
+    height:28px; 
+    padding-left:12px;
+    line-height:10px;
+}
+
+a.edit
+{
+    padding-left:10px;
+    background:#337ab7;
+    color:#fff;
+    border-radius:2px;
+    border:none;
+}
+
+tr.row-name
+{
+    font-size: 18px;
+       color: none repeat scroll 0 0 rgb(80, 34, 30);
+}
+
+tr.row-content
+{
+    color:#6c7173;
+}
+
+table
+{
+    /*border-bottom: 8px solid #448aff;*/
+}
+
+td.check
+{
+    text-align: center;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)
+{
+    background:#F0F2F2 !important; 
+}
+
+a.btn-danger:hover
+{
+    background: #de6c69;
+}
+
+a.btn-danger
+{
+    background:#d9534f;  
+}
+
+a.btn-top
+{
+   background: none repeat scroll 0 0 rgb(80, 34, 30);
+    color:#fff;
+/*    border:1px solid #448aff; */
+    padding: 7px 10px; 
+    border-radius:4px; 
+}
+
+a.btn-top:hover
+{
+    text-decoration: none;
+    box-shadow:3px 3px 5px #222; 
+    transition:box-shadow 0.5s; 
+}
+a.btn-top.ask{float: right;}
+.setting{background: none repeat scroll 0 0 rgb(80, 34, 30);}
+.delete{background:#d9534f;}
+.edit{background-color: rgba(0, 136, 204, 0.68);}
+/*model*/
+button.btn.answer{
+    background-color: rgba(29, 148, 115, 0.9);
+    width: 71px;
+    height: 37px;    
+    padding: initial;
+  }
+button.btn.answer.update{
+	background-color: #fd7444
+}
+/* Table css End */

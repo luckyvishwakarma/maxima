@@ -1,7 +1,7 @@
 Rails.application.routes.draw do 
 	devise_for :users, controllers: {sessions: 'users/sessions',registrations: 'users/registrations'}  
   root 'home#dashboard'   
-  resources :home do
+  resources :home , only: [:create]do
   	collection do
   		get 'dashboard'
   		get 'contact'
@@ -13,7 +13,13 @@ Rails.application.routes.draw do
     end
   end
   resources :emails, only: [:show]
-  resources :faqs, only: [:show]
+  resources :faqs do
+    member do
+      get 'view_answer'
+    end
+  end
+
+
   resources :picture do
     collection do
       get 'remove_pics'
@@ -21,4 +27,5 @@ Rails.application.routes.draw do
   end
 
   resources :gallaries 
+  resources :inquiry
 end

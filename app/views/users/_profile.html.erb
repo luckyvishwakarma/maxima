@@ -1,4 +1,4 @@
-<div class="row" style="background-color: salmon;">
+'<div class="row" style="background-color: salmon;">
   <div class="tabbable">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#tab11" data-toggle="tab">Profile</a></li>
@@ -84,11 +84,7 @@
                 <div class="form-group">
                   <label class="col-lg-3">Gender:</label>
                   <div class="col-lg-8">
-                    <div class="ui-select">
-                     <!--  <select id="user_time_zone" class="select-wd">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </select> -->
+                    <div class="ui-select">                 
                       <%= f.select :gender, User::GENDER.collect { |s, i| [s, i] }, {:prompt=>true}, class: 'select-wd',placeholder: @user.gender %>
                     </div>
                   </div>

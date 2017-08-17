@@ -1,0 +1,46 @@
+<div class="modal-dialog">
+  <div class="modal-content"> 
+    <div class="modal-body">
+    <h2 align="center">Edit Question </h2>
+      <%= form_for @faq, url:faq_path, :html => {:class=> "form-vertical"} do |f|%>
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend class="font-color">Ask Your Question</legend>
+
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="where">To</label>
+            <div class="col-md-4">
+          
+              <%= f.select :question_to_id, find_admin_hr_email.collect {|u| [u.email, u.id]}, {:prompt=>true}, class: 'form-control wdth',placeholder: @faq.question_to_id,:disabled => true %>
+
+            </div>
+          </div></br>
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="category">Category</label>
+            <div class="col-md-4">      
+               <%= f.select :category, Faq::CATEGORY.collect { |s, i| [i, s] }, {:prompt=>true}, class: 'form-control wdth',placeholder: "Select Category"%>
+            </div>
+          </div></fieldset></br>
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="your_question">Your Question</label>
+            <div class="col-md-4">
+           <%= f.text_area :question, :placeholder=>"Ask Your Question here", class: "form-control rz-none", size: "50x4"%>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-4">                     
+              <button class="btn answer update"> Update</button>       
+            </div>      
+          </div>
+      <% end %>
+    <div class="clearfix"></div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn answer">Close</button>
+    </div>
+  </div>
+</div>

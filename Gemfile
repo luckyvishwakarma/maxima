@@ -28,6 +28,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
+gem "rolify"
 
 #=============================
 

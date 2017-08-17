@@ -1,40 +1,55 @@
-<div class="container-fluid faq">
-  <form class="form-vertical" style="float: right;margin-top: 20px;width: 41%;">
-  <fieldset>
-
-    <!-- Form Name -->
-    <legend class="font-color">Ask Your Question</legend>
-
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label font-color" for="where">To</label>
-      <div class="col-md-4">      
-         <select id="category" name="category" class="form-control wdth">
-          <option value="1">Email 1</option>
-          <option value="2">Email 2</option>
-          <option value="1">Email 3</option>
-          <option value="2">Email 4</option>
-        </select>
-      </div>
-    </div></br>
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label font-color" for="category">Category</label>
-      <div class="col-md-4">
-        <select id="category" name="category" class="form-control wdth">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
-        </select>
-      </div>
-    </div></fieldset></br>
-    <!-- Textarea -->
-    <div class="form-group">
-      <label class="col-md-4 control-label font-color" for="your_question">Your Question</label>
-      <div class="col-md-4">                     
-        <textarea class="form-control rz-none" id="your_question" name="your_question" rows="4" cols="50">Ask Your Question here...</textarea>
-      </div>
-    </div>
-
-  </fieldset>
-  </form>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">    
+<h2 style="padding: 7px; margin-bottom: 0px;"> FAQ List </h2>
+<hr>
+<div class="tb">
+  <table class="table table-striped">
+  <%= link_to "Ask Question" , faqs_path,:class => "btn-top ask"%>
 </div>
+     <thead>
+        <tr class="row-name">
+           <th style="width:12%">Check/UnCheck</th>
+           <th style="width:10%">New/Old</th>
+           <th>Id</th>
+           <th> To </th>          
+           <% if current_user.has_role? :ADMIN  %>           
+           <th> From </th>
+           <% end %>
+           <th>Category</th>
+           <th>Questions</th>
+           <th>Answers</th>          
+           <th>Settings</th>
+        </tr>
+     </thead>   
+     <tbody>
+      <% @faqs.each do |faq| %>
+        <tr class="row-content">   
+           <td class="check" "> <label><input type="checkbox" value=""></label></td>
+           <td> <span class="label label-default"> New </span></td>
+           <td><%= faq.id %></td>
+           <td><%= email_of(faq.question_to_id) %></td>
+           <% if current_user.has_role? :ADMIN  %>
+           <td><%= email_of(faq.question_from_id)%>
+           <% end %>
+           <td><%= faq.category %></td>
+           <td><%= faq.question %></td>
+           <td><%= faq.answer.present? ?  link_to("View",view_answer_faq_path(faq.id), :remote=> true) : "Pending" %></td>           
+           <td>            
+            <!--   <%= link_to '<i class="fa fa-trash btn delete" aria-hidden="true"></i>'.html_safe, faq_path(faq.id), method: :delete,data: {confirm: 'Are you sure?'} %> -->
+              &nbsp               
+             <!--  <%#= link_to '<i class="fa fa-pencil-square-o btn edit" aria-hidden="true"></i>'.html_safe, edit_faq_path(faq.id),:remote => true %> -->
+             <%= link_to faq_path(faq.id), remote: true,method: :delete,data: {confirm: 'Are you sure?'} do %>
+               <i class="fa fa-trash-o fa-lg fa-fw" style="color: red;" data-placement="top" rel="<%= :tooltip %>" title="Delete"></i>
+            <% end %>
+            <%= link_to edit_faq_path(faq.id), remote: true do %>
+              <i class="fa fa-pencil-square-o fa-lg fa-fw" style="color: blue;" data-placement="top" rel="<%= :tooltip %>" title="Edit"></i>
+            <% end %>
+           </td>
+        </tr>
+      <% end %>     
+     </tbody>
+  </table>
+  </div>
+ <div class="modal" id="showanswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  </div>
+
+
