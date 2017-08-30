@@ -233,14 +233,14 @@ div, article, section, header, footer, nav, li {
 }
 body {
 	background:#fff;
-	color: #444;
+	color: #fff;
 	font-size: 16px;
-	font-weight:300;
+	font-weight:600;
 	font-family:'Open Sans', Arial, sans-serif;
 }
 
 body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
 ::-moz-selection {
@@ -252,11 +252,11 @@ body {
 
 /* scroll to top */
 .scrollup{
-    position:fixed;
+  position:fixed;
 	width:32px;
 	height:32px;
-    bottom:20px;
-    right:20px;
+  bottom:20px;
+  right:20px;
 }
 
 a.scrollup {
@@ -291,7 +291,7 @@ a.scrollup i:hover {
 }
 
 .row {
-	margin-bottom:30px;
+	/*margin-bottom:30px;*/	
 }
 
 .row .row{
@@ -653,7 +653,11 @@ section.spacer {
 }
 
 .spacer.green,.section.green {
-	background:#1bac91;
+  background-image: url(/assets/back2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .spacer.green,.section.green h4 {
@@ -1894,19 +1898,20 @@ background-color: red;
 
 /*profile tab*/
 .tabbable{margin-top: 17px;margin-left: 23px;}
-.nav-tabs > li > a {background-color: #09828c;border-radius: 10px 2px 0 0;color: #fff;}
-.tabbable ul.nav-tabs li.active a {background-color: #09828c;border-radius: 26px 2px 0 0;color: #fff;}
+.nav-tabs > li > a {background-color: #0a708e;;border-radius: 10px 2px 0 0;color: #fff;}
+.tabbable ul.nav-tabs li.active a {background-color: #0a708e;color: #fff;}
 .nav-tabs > li > a:hover {
   background-color: #545454;
 }
 .prof-colr{background-color: antiquewhite;}
+.gallry-colr{background-color: #181818;}
 .tabbable ul.nav-tabs li.active a:hover{background-color: #545454;}
 .wd{width: 95%;}
 .pro_form{float: right; width: 40%;}
 
 
 /*dashboard layout*/
-.main-container{max-height:100%;min-height: 500px; background-color: antiquewhite;}
+.main-container{max-height:100%;min-height: 500px;background-color: antiquewhite;margin-top: 30px; }
 
 
 
@@ -2060,8 +2065,8 @@ a.btn-danger
 
 a.btn-top
 {
-   background: none repeat scroll 0 0 rgb(80, 34, 30);
-    color:#fff;
+  background: none repeat scroll 0 0 rgb(80, 34, 30);
+  color:#fff;
 /*    border:1px solid #448aff; */
     padding: 7px 10px; 
     border-radius:4px; 
@@ -2087,5 +2092,41 @@ button.btn.answer{
 button.btn.answer.update{
 	background-color: #fd7444
 }
+.color-wt{color:#fff;}
+.ft-wet{font-weight: 600;}
+.mar-top{margin-top: 10px;}
 .tx{background: rgba(227, 231, 228, 1);font-family: 'Open Sans', sans serif;	}
 /* Table css End */
+.pg{background-color: rgb(10, 112, 142);}
+.nav-tabs {
+   border-bottom: none !important; 
+}
+
+/*calendar*/
+.cal-div{
+  background: rgba(19, 113, 109, 0.5); 
+  margin: 148px;
+  margin-top: 10px;
+  margin-bottom: 200px;
+}
+/*.event-div{
+	background-color: white;
+  height: 200px;
+  float: right;
+  width: 30%;}
+.fc-content{height: 100px;}
+.fc-day-top{background-color: black;}
+.mar-30{margin-right: 30px;}
+.eve-contnr{width: 95%;}
+.weln{height: 388px;}
+.bg-blk{background: #0a708e;;margin-right: 5px;}
+.fc-view, .fc-view > table {margin-top: -16px;}
+.fc-toolbar.fc-header-toolbar {height: 42px;}
+.fc .fc-button-group > *{height: 42px;}
+.fc .fc-toolbar > * > :first-child {height: 42px;}
+body { padding-top:30px; }
+  .form-control { margin-bottom: 10px; }*/
+
+  textarea {
+  resize: none;
+  }

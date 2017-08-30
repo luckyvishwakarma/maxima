@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base	
   rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  mount_uploader :profile_image, ImageUploader   
-  after_create :set_emp_id_and_role   
+
+  mount_uploader :profile_image, ImageUploader 
   has_many :faqs, :dependent => :destroy
+
+  after_create :set_emp_id_and_role   
+  
 
   GENDER = {:Male => 'male',
   					:Female => 'female'}
@@ -16,5 +17,9 @@ class User < ActiveRecord::Base
 		self.update_attribute(:emp_id, emp_id)
     self.add_role(:DEVELOPER) if self.roles.blank?
   end	
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
  
 end

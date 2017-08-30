@@ -950,7 +950,7 @@ border-top:none;
   font-size:13px;
 	font-weight:600;
   background:#eee;
-  border:1px solid #ddd;
+/*  border:1px solid #ddd;*/
 }
 
 .nav-tabs > li > a:hover {
@@ -963,7 +963,7 @@ font-weight:600;
 
 .tabs-left .nav-tabs {
 	margin-right:0;
-	border-right:1px solid #ddd;
+	/*border-right:1px solid #ddd;*/
 	
 }
 
@@ -972,14 +972,14 @@ font-weight:600;
   font-size:13px;
 font-weight:600;
   background:#eee;
-  border:1px solid #ddd;
+ /* border:1px solid #ddd;*/
 }
 .tabs-right .nav-tabs > li > a:hover {
   outline:0;
   font-size:13px;
 font-weight:600;
   background:#eee;
-  border:1px solid #ddd;
+ /* border:1px solid #ddd;*/
 }
 .tabs-left .nav-tabs > .active > a,
 .tabs-left .nav-tabs > .active > a:hover,

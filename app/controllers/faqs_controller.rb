@@ -23,7 +23,7 @@ class FaqsController < ApplicationController
 	def view_answer
 	end
 
-	def edit	
+	def edit
 	end
 
 	def update		

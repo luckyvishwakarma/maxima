@@ -1,10 +1,11 @@
-'<div class="row" style="background-color: salmon;">
+<div class="row pg">
   <div class="tabbable">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#tab11" data-toggle="tab">Profile</a></li>
       <li><a href="#tab12" data-toggle="tab">Celender</a></li>
-      <li><a href="#tab12" data-toggle="tab">Holiday</a></li>
-      <li><a href="#tab12" data-toggle="tab">Leaves</a></li>
+      <li><a href="#tab13" data-toggle="tab">Holiday</a></li>
+      <li><a href="#tab14" data-toggle="tab">Leaves</a></li>
+      <li><a href="#tab15" data-toggle="tab">Event</a></li>
     </ul>
     <div class="tab-content prof-colr">
       <div class="tab-pane active" id="tab11">
@@ -15,7 +16,8 @@
             <!-- left column -->            
             <div class="col-md-4" style="float: left;">
               <div class="text-center">
-              <%= form_for @user, url: user_path, html: { class: "form-horizontal form-wd"} do |f| %>
+              <%= form_for @user, url: user_path, :html=> { :class=> "form-horizontal form-wd", :id=> "profile_update"} do |f| %>
+               <%#= form_for @faq, url:faq_path, :html => {:class=> "form-vertical"} do |f|%>
               <% if @user.profile_image.present? %>
                 <%= image_tag(@user.profile_image.url, :size => "250x160",:class => "avatar img-circle img-thumbnail")  %>
               <%else%>
@@ -111,7 +113,8 @@
                 </div>
                 <div class="form-group" style="margin-top: 10px;">
                   <div class="col-md-12">                    
-                    <%= f.submit 'Save Changes' , class: "btn btn-primary" %>
+                    <%#= f.submit 'Save Changes' , class: "btn btn-primary" %>
+                  <a href="#" class="btn btn-primary" id="profile_edit">Save Changes</a>
                    <span></span>                    
                   </div>
                 </div>                
@@ -123,8 +126,58 @@
         <!-- end profile -->
       </div>
       <div class="tab-pane" id="tab12">
-        <p>Howdy, I'm in Section 2.Morbi vel nibh et arcu pretium adipiscing. Ut vestibulum est eget justo facilisis ullamcorper.  </p>
+        <%#= render 'events/index' %>
+        <%#= link_to "New Event" , new_event_path,:remote=> true,:class => "btn bg-blk pull-right"%>
+        <div class="col-md-6 cal-div">
+          <div class="calendar"></div>     
+        </div>
+        
+        <div class="modal" id="new-event" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        </div>
+       
+    </div>
+      <div class="tab-pane" id="tab15">ghldfkjgh    
+      
       </div>
     </div>
   </div>
 </div>
+
+
+
+<script type="text/javascript">  
+  $('#profile_edit').click(function(){ 
+    $('#profile_update').submit();
+  });  
+  $(document).ready(function(){
+
+    $('.calendar').fullCalendar({
+    eventSources: [{
+          events: [
+            {
+                title  : 'event1',
+                start  : '2017-08-10'           
+            },
+            {
+                title  : 'event2',
+                start  : '2017-08-25',
+                end    : '2017-08-27'              
+            },
+            {
+                title  : 'event3',
+                start  : '2017-08-09',
+                allDay : false 
+            }
+          ],
+      editable: true,
+          //color: 'black', 
+          textColor: 'rgb(248, 233, 6)',
+           eventColor: 'black'
+        }    
+      ]
+  });
+
+
+});
+
+</script>

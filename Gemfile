@@ -29,6 +29,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem "rolify"
+gem 'activeadmin'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 #=============================
 

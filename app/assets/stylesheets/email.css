@@ -23,6 +23,7 @@
   }
   .mail-box .lg-side {
    /* background: none repeat scroll 0 0 #fff;*/
+    background: none repeat scroll 0 0 rgba(245, 245, 245, 0.66);
     border-radius: 0 4px 4px 0;
     width: 75%;
   }

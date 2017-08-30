@@ -1,7 +1,63 @@
-<div id="header-wrapper" class="header-slider">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<section class="jk-slider">
+  <div id="carousel-example" class="carousel slide" data-ride="carousel">
+ <!--  <ol class="carousel-indicators">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol> -->
+
+  <div class="carousel-inner">
+  
+    <div class="item active">    
+      <div class="overlay"></div>
+     <a href="#"><%= image_tag("itback1.jpg") %></a>
+      	
+    </div>
+  	<div class="item">
+  		<div class="hero">
+        <!-- <hgroup>
+            <h1>Search for</h1>        
+            <h3>the books you need and save ! </h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+        </hgroup> -->
+        
+      </div>
+      
+       <div class="overlay"></div>
+      <a href="#"><%= image_tag("itback11.jpg") %></a>
+      
+    </div>
+    <div class="item">
+    	<div class="hero">
+     <!--    <hgroup>
+            <h1>Search for</h1>        
+            <h3>the books you need and save ! </h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+        </hgroup> -->
+        
+      </div>
+      	<div class="overlay"></div>
+      <a href="#"><%= image_tag("itback13.jpg") %></a>
+      
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+	
+</section>
+
+
+<!-- <div id="header-wrapper" class="header-slider">
 	<header class="clearfix">
 	<div class="logo">		
-		<%= image_tag("logo-image.png") %>
+		<%#= image_tag("logo-image.png") %>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -26,11 +82,11 @@
 					</ul>
 				</div>
 				<!-- end slider -->
-			</div>
+<!-- 			</div>
 		</div>
 	</div>
 	</header>
-</div>
+</div> -->
 <!-- spacer section -->
 <section class="spacer green">
 <div class="container">
@@ -46,3 +102,70 @@
 	</div>
 </div>
 </section>
+<style type="text/css">
+.jk-slider{
+    width:100%;
+}
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.carousel{
+	     margin-bottom: 0px; 
+}
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s; 
+}
+.carousel-control{
+	background: none !important;
+	border: 0px !important;
+}
+.carousel-inner > .item{
+	 -webkit-transition: 0.3s ease-in-out left;
+          transition: 0.3s ease-in-out left;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+Similar snippets: See More
+2.0K  0 
+Slider with white overlay
+
+
+6.4K  4 
+Bootstrap Navbar and Slider Overlay Text
+
+
+5.9K  8 
+Background Image Overlay
+
+
+5.3K  3 
+Background Overlay with text
+
+
+
+</style>

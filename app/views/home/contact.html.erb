@@ -1,87 +1,88 @@
-<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
-<section id="contact" class="section green">	
+<!-- <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+<!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHNNpm0xkJeYQMFpOLPX8cRLV9pSUSdgk&callback=initMap"
+  type="text/javascript"></script> -->
+<section id="contact" class="section green">  
 
-	<div class="container">
-		<h4>Get in Touch</h4>
-		<p>
-			 Reque facer nostro et ius, cu persius mnesarchum disputando eam, clita prompta et mel vidisse phaedrum pri et. Facilisis posidonium ex his. Mutat iudico vis in, mea aeque tamquam scripserit an, mea eu ignota viderer probatus. Lorem legere consetetur ei eum. Sumo aeque assentior te eam, pri nominati posidonium consttuam
-		</p>
-		<div class="blankdivider30">
-		</div>
-		<div class="row">
-			<div class="span12">
-				<div class="cform" id="contact-form">
-					<div id="sendmessage">Your message has been sent. Thank you!</div>
-	        <div id="errormessage"></div>		
-					<%= form_for @inquiry, url:home_index_path , method: :post do |f| %>
-						<div class="row">
-							<div class="span6">
-								<div class="field your-name form-group">							
-									<%= f.text_field :inq_name, :placeholder=>"Your Name" %>
-	                <div class="validation"></div>
-								</div>
+  <div class="container">
+    <h4>Get in Touch</h4>
+    <p>
+       Reque facer nostro et ius, cu persius mnesarchum disputando eam, clita prompta et mel vidisse phaedrum pri et. Facilisis posidonium ex his. Mutat iudico vis in, mea aeque tamquam scripserit an, mea eu ignota viderer probatus. Lorem legere consetetur ei eum. Sumo aeque assentior te eam, pri nominati posidonium consttuam
+    </p>
+    <div class="blankdivider30">
+    </div>
+    <div class="row">
+      <div class="span12">
+        <div class="cform" id="contact-form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>   
+          <%= form_for @inquiry, url:home_index_path , method: :post do |f| %>
+            <div class="row">
+              <div class="span6 mar-top">
+                <div class="field your-name form-group">              
+                  <%= f.text_field :inq_name, :placeholder=>"Your Name" %>
+                  <div class="validation"></div>
+                </div>
 
-								<div class="field your-email form-group">							
-									<%= f.text_field :inq_email, :placeholder=>"Please enter a valid email" %>
-	                <div class="validation"></div>
-								</div>
+                <div class="field your-email form-group">             
+                  <%= f.text_field :inq_email, :placeholder=>"Please enter a valid email" %>
+                  <div class="validation"></div>
+                </div>
 
-								<div class="field subject form-group">		
-									<%= f.text_field :inq_subject, :placeholder=>"Subject" %>
-	                <div class="validation"></div>
-								</div>
-							</div>
+                <div class="field subject form-group">    
+                  <%= f.text_field :inq_subject, :placeholder=>"Subject" %>
+                  <div class="validation"></div>
+                </div>
+              </div>
 
-							<div class="span6">
-								<div class="field message form-group">								
-									<%= f.text_area :inq_message, :placeholder=>"Message", class: "form-control rz-none tx", size: "20x6"%>
-	                <div class="validation"></div>
-								</div>
-								<input type="submit" value="Send message" class="btn btn-theme pull-left">
-							</div>
-						</div>
-					<% end %>		
-				</div>
-			</div>
-			<!-- ./span12 -->
-		</div>
-	</div>
-	<hr>
-	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<div class="cform" id="contact-form">
-					<div id="sendmessage">Your message has been sent. Thank you!</div>
-	        <div id="errormessage"></div>
-						<div class="row">
-							<div class="span6">
-								<p style="color:#fff;">
-						      <strong><i class="fa fa-map-marker"></i> Address</strong><br>
-						      1216/Mirpur_10 Beach, Dhaka(Bangladesh)
-						  	</p>
-							  <p style="color:#fff;"><strong><i class="fa fa-phone"></i> Phone Number</strong><br>
-							      (+8801)7123456</p>
-							  <p style="color:#fff;">
-							      <strong><i class="fa fa-envelope"></i>  Email Address</strong><br>
-							      Email@info.com</p>
-							  <p></p>
-							</div>
+              <div class="span6">
+                <div class="field message form-group mar-top">                
+                  <%= f.text_area :inq_message, :placeholder=>"Message", class: "form-control rz-none tx", size: "20x6"%>
+                  <div class="validation"></div>
+                </div>
+                <input type="submit" value="Send message" class="btn btn-theme pull-left">
+              </div>
+            </div>
+          <% end %>   
+        </div>
+      </div>
+      <!-- ./span12 -->
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="cform" id="contact-form">          
+            <div class="row">
+              <div class="span6">
+              <h3 class="color-wt ft-wet">Site Address</h3>
+                <p class="color-wt">
+                  <strong><i class="fa fa-map-marker"></i> Address</strong><br>
+                  207, TBC tower, 22/1 South Tukoganj, Manoramaganj, Indore(MP)-452001
+                </p>
+                <p class="color-wt"><strong><i class="fa fa-phone"></i> Phone Number</strong><br>
+                    (+8801)7123456</p>
+                <p class="color-wt">
+                    <strong><i class="fa fa-envelope"></i>  Email Address</strong><br>
+                    Email@info.com</p>
+                <p></p>
+              </div>
 
-							<div class="span6">	<h3 class="google">Google Map here</h3>							
-								<div id="toutMap">
-								  <div class="maps">
-								    <div id="map2" class="map-wrap">
-								    </div>
-								  </div>
-								</div>								
-							</div>
+              <div class="span6"> <h3 class="google ft-wet">Google Map</h3>             
+                <div id="toutMap">
+                  <div class="maps">
+                    <div id="map2" class="map-wrap">
+                    </div>
+                  </div>
+                </div>                
+              </div>
 
-						</div>			
-				</div>
-			</div>
-			<!-- ./span12 -->
-		</div>
-	</div>
+            </div>      
+        </div>
+      </div>
+      <!-- ./span12 -->
+    </div>
+  </div>
 </section>
 <script>
     function myMap() {
@@ -92,7 +93,7 @@
       };
       var map=new google.maps.Map(document.getElementById("toutMap"),mapProp);
       toutMap.style.height = '300px';
-    	toutMap.style.width = '500px';
+      toutMap.style.width = '500px';
       var marker = new google.maps.Marker({position: myCenter});
       var infowindow = new google.maps.InfoWindow({
         content: "207, TBC tower, 22/1 South Tukoganj, Manoramaganj, Indore(MP)-452001"
@@ -105,3 +106,7 @@
     myMap();
 
   </script>
+
+
+
+

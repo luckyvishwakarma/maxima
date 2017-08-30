@@ -37,7 +37,7 @@
             <!--   <%= link_to '<i class="fa fa-trash btn delete" aria-hidden="true"></i>'.html_safe, faq_path(faq.id), method: :delete,data: {confirm: 'Are you sure?'} %> -->
               &nbsp               
              <!--  <%#= link_to '<i class="fa fa-pencil-square-o btn edit" aria-hidden="true"></i>'.html_safe, edit_faq_path(faq.id),:remote => true %> -->
-             <%= link_to faq_path(faq.id), remote: true,method: :delete,data: {confirm: 'Are you sure?'} do %>
+             <%= link_to faq_path(faq.id),method: :delete,data: {confirm: 'Are you sure?'} do %>
                <i class="fa fa-trash-o fa-lg fa-fw" style="color: red;" data-placement="top" rel="<%= :tooltip %>" title="Delete"></i>
             <% end %>
             <%= link_to edit_faq_path(faq.id), remote: true do %>

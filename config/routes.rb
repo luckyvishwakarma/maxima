@@ -1,5 +1,8 @@
 Rails.application.routes.draw do 
-	devise_for :users, controllers: {sessions: 'users/sessions',registrations: 'users/registrations'}  
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+	
+  devise_for :users, controllers: {sessions: 'users/sessions',registrations: 'users/registrations'}  
   root 'home#dashboard'   
   resources :home , only: [:create]do
   	collection do
@@ -11,6 +14,7 @@ Rails.application.routes.draw do
     member do
       post 'upload_image'
     end
+    get :get_events, on: :collection
   end
   resources :emails, only: [:show]
   resources :faqs do
@@ -28,4 +32,5 @@ Rails.application.routes.draw do
 
   resources :gallaries 
   resources :inquiry
+  resources :events
 end
